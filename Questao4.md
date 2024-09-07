@@ -1,34 +1,28 @@
-Estado
-+------------------+
-| estado_id (PK)   |
-| sigla            |
-| nome             |
-+------------------+
+### Estado
 
-Cliente
-+-------------+
-| cliente_id (PK) |
-| razao_social |
-| estado_id (FK) |
-+-------------+
-       |
-       |
-       V
-Telefone
-+--------------+
-| telefone_id (PK) |
-| numero        |
-| tipo_telefone_id (FK) |
-| cliente_id (FK) |
-+--------------+
-       |
-       |
-       V
-TipoTelefone
-+-----------------+
-| tipo_telefone_id (PK) |
-| descricao       |
-+-----------------+
+| estado_id (PK) | sigla | nome   |
+|----------------|-------|--------|
+| integer        | char  | string |
+
+### Cliente
+
+| cliente_id (PK) | razao_social | estado_id (FK) |
+|-----------------|--------------|----------------|
+| integer         | string       | integer        |
+
+### Telefone
+
+| telefone_id (PK) | numero | tipo_telefone_id (FK) | cliente_id (FK) |
+|------------------|--------|-----------------------|-----------------|
+| integer          | string | integer               | integer         |
+
+### TipoTelefone
+
+| tipo_telefone_id (PK) | descricao |
+|-----------------------|-----------|
+| integer               | string    |
+
+
 
 -- Criação da tabela Estado
 CREATE TABLE Estado (
